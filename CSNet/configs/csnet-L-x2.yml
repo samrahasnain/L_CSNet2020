@@ -7,20 +7,20 @@ MODEL:
   BASIC_SPLIT: [0.5,0.5]
 
 DATA:
-  DIR: "datasets/sal/DUTS-TR"
+  DIR: "/kaggle/input/duts-saliency-detection-dataset/DUTS-TE"
   PRETRAIN: ''
   BATCH_SIZE: 24
-  WORKERS: 8
+  WORKERS: 0
   IMAGE_H: 224
   IMAGE_W: 224
   RESUME: ""
 
 VAL:
-  DIR: "datasets/sal/ECSSD"
+  DIR: "/kaggle/input/duts-saliency-detection-dataset/DUTS-TE"
 
 TEST:
-  DATASET_PATH: 'datasets/sal'
-  DATASETS: ['ECSSD']
+  DATASET_PATH: '/kaggle/input/duts-saliency-detection-dataset'
+  DATASETS: ['DUTS-TE']
   INTERVAL: 5
   ENABLE: False
   IMAGE_H: 224
