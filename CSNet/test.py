@@ -2,7 +2,7 @@ import os
 import math
 import argparse
 import importlib
-
+import time
 import numpy as np
 import torch
 import skimage
@@ -87,6 +87,7 @@ def test(model, test_datasets, epoch):
                 img = torch.unsqueeze(torch.FloatTensor(img), 0)
                 input_var = torch.autograd.Variable(img)
                 input_var = input_var.cuda()
+                time_s = time.time()
                 predict = model(input_var)
                 predict = predict[0]
                 predict = torch.sigmoid(predict.squeeze(0).squeeze(0))
@@ -97,6 +98,8 @@ def test(model, test_datasets, epoch):
                 save_file = os.path.join(sal_save_dir, img_name[0:-4] + '.png')
                 io.imsave(save_file, predict)
                 count += 1
+                time_e = time.time()
+                print(f'Speed: {img_num / (time_e - time_s):.2f} FPS')
         print('Dataset: {}, {} images'.format(dataset, len(img_list)))
 
 
