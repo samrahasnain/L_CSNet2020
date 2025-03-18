@@ -99,7 +99,7 @@ def test(model, test_datasets, epoch):
                 io.imsave(save_file, predict)
                 count += 1
                 time_e = time.time()
-                print(f'Speed: {img_num / (time_e - time_s):.2f} FPS')
+                print(f'Speed: { (time_e - time_s):.2f} FPS')
         print('Dataset: {}, {} images'.format(dataset, len(img_list)))
 
 
