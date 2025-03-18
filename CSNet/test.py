@@ -62,7 +62,7 @@ def test(model, test_datasets, epoch):
         sal_save_dir = os.path.join(cfg.DATA.SAVEDIR, cfg.TASK,
                                     dataset + '_' + str(epoch))
         os.makedirs(sal_save_dir, exist_ok=True)
-        img_dir = os.path.join(cfg.TEST.DATASET_PATH, dataset, 'images')
+        img_dir = os.path.join(cfg.TEST.DATASET_PATH, dataset, 'DUTS-TE-Image')
         img_list = os.listdir(img_dir)
         count = 0
         mean = [0.485, 0.456, 0.406]
